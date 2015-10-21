@@ -1,0 +1,23 @@
+## Use knit2html to create the HTML file (or knit)
+## If you have problem with downloading the file, make sure this command preceeds the download.file command
+setInternet2(use = TRUE)
+
+## Create a .Rprofile file
+- Use the File menu to make a New File -> Text File
+- Put in options(rpubs.upload.method = "internal") and no other text at all
+- Use the Save command and save it with the name .RProfile
+- Quit RStudio, restart RStudio, make sure your working directory is set to the folder, then try to publish again.
+
+## Back in RStudio
+library(markdown)
+
+setwd("H:/Personal/Training/20150504 Coursera/Specialization in Data Science/05. Reproducible Research/Assessment/RepData_PeerAssessment2")
+
+## Publish to RStudio
+rpubsUpload(title = "Reproducible Research - Peer Assessment 2 - Impact of Storms and Severe Weather Events in the US", htmlFile = "StormImpactAnalysis.html", id = NULL, properties = list(), method = getOption("rpubs.upload.method", "internal"))
+
+## This will prompt to enter your email / password to RPubs so that the HTML can be published
+browseURL(result$continueUrl)
+
+## Enter description (e.g.):
+This analysis involves exploring the U.S. National Oceanic and Atmospheric Administration's (NOAA) storm database. This database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage. The analysis will look at the most harmful events with respect to population health and the events with the greatest economic impacts.
